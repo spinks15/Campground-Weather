@@ -1,6 +1,6 @@
-﻿using System;
+﻿using Capstone.Web.Dal;
+using System;
 using System.Collections.Generic;
-using System.Configuration;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -9,16 +9,18 @@ namespace Capstone.Web.Controllers
 {
     public class HomeController : Controller
     {
-        private string connectionString; 
 
-        public HomeController()
+        private readonly IParkWeatherDal applicationDal;
+
+        public HomeController(IParkWeatherDal applicationDal)
         {
-            connectionString = ConfigurationManager.ConnectionStrings["NationalParkWeatherDB"].ConnectionString;
+            this.applicationDal = applicationDal;
         }
 
         // GET: Home
         public ActionResult Index()
         {
+            int x = applicationDal.TestMethod();
             return View("Index");
         }
     }
