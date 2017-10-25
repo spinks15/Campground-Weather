@@ -109,6 +109,28 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\backpack.png" />
+    <Content Include="Content\backpack2.jpg" />
+    <Content Include="Content\geek.png" />
+    <Content Include="Content\logo.png" />
+    <Content Include="Content\parks\cvnp.jpg" />
+    <Content Include="Content\parks\enp.jpg" />
+    <Content Include="Content\parks\gcnp.jpg" />
+    <Content Include="Content\parks\gnp.jpg" />
+    <Content Include="Content\parks\gsmnp.jpg" />
+    <Content Include="Content\parks\gtnp.jpg" />
+    <Content Include="Content\parks\mrnp.jpg" />
+    <Content Include="Content\parks\rmnp.jpg" />
+    <Content Include="Content\parks\ynp.jpg" />
+    <Content Include="Content\parks\ynp2.jpg" />
+    <Content Include="Content\scenery.png" />
+    <Content Include="Content\stylesheet.css" />
+    <Content Include="Content\weather\cloudy.png" />
+    <Content Include="Content\weather\partlyCloudy.png" />
+    <Content Include="Content\weather\rain.png" />
+    <Content Include="Content\weather\snow.png" />
+    <Content Include="Content\weather\sunny.png" />
+    <Content Include="Content\weather\thunderstorms.png" />
     <Content Include="Global.asax" />
     <Content Include="Web.config" />
   </ItemGroup>
@@ -121,12 +143,22 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\Park.cs" />
+    <Compile Include="Models\SurveyResult.cs" />
+    <Compile Include="Models\Weather.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\web.config" />
     <Content Include="packages.config" />
     <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\_ViewStart.cshtml" />
+    <Content Include="Views\Home\Survey.cshtml" />
+    <Content Include="Views\Home\SurveyResults.cshtml" />
+    <Content Include="Views\Home\Detail_bak.cshtml" />
+    <Content Include="Views\Home\Detail.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -136,8 +168,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Models\" />
-    <Folder Include="Views\Shared\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

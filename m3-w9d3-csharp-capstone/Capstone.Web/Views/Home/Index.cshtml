@@ -1,18 +1,27 @@
-﻿
+﻿@model List<Park>
+@using Capstone.Web.Models;
 @{
-    Layout = null;
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<!DOCTYPE html>
 
-<html>
+
+
 <head>
     <meta name="viewport" content="width=device-width" />
     <title>Index</title>
 </head>
 <body>
+    @foreach (Park p in Model)
+    {
+        <a href="~/Home/Detail/@p.ParkCode">
+            <img src="~/Content/parks/@(p.ParkCode.ToLower()+".jpg")" alt="@p.ParkDescription" />
+            <p>@p.ParkName</p>
+        </a>
+    }
     <div> 
-        No content, yet.
+        
     </div>
 </body>
-</html>
+
