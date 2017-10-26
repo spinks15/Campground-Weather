@@ -1,0 +1,80 @@
+﻿@model List<Capstone.Web.Models.Weather>
+
+@{
+    ViewBag.Title = "Forecast";
+}
+
+<h2>Forecast</h2>
+
+<p>
+    
+    @if ((bool)Session["Fahrenheit"])
+            {
+        @Html.ActionLink("Convert to Celcius", "ForecastToggle", new { id = @Html.DisplayFor(model => model[0].ParkCode), fahrenheit = false })
+    }
+    else
+    {
+        @Html.ActionLink("Convert to Fahrenheit", "ForecastToggle", new { id = @Html.DisplayFor(model => model[0].ParkCode), fahrenheit = true })
+    }
+    
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model[0].ParkCode)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model[0].FiveDayForecastValue)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model[0].Low)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model[0].High)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model[0].Forecast)
+        </th>
+       <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.ParkCode)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FiveDayForecastValue)
+            </td>
+            <td>
+                @if ((bool)Session["Fahrenheit"])
+                {
+                    @Html.DisplayFor(modelItem => item.Low)
+                }
+                else
+                {
+                    @Html.DisplayFor(modelItem => item.LowC)
+                }
+            </td>
+            <td>
+                @if ((bool)Session["Fahrenheit"])
+                {
+                    @Html.DisplayFor(modelItem => item.High)
+                }
+                @if (!(bool)Session["Fahrenheit"])
+                {
+                    @Html.DisplayFor(modelItem => item.HighC)
+                }
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Forecast)
+            </td>
+           <td>
+               @Html.DisplayFor(modelItem => item.Recommendation)
+               @Html.DisplayFor(modelItem => item.TempRecommendation)
+           </td>
+        </tr>
+    }
+
+</table>

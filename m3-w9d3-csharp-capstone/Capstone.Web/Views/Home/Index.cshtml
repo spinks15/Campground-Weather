@@ -15,13 +15,22 @@
 <body>
     @foreach (Park p in Model)
     {
-        <a href="~/Home/Detail/@p.ParkCode">
-            <img src="~/Content/parks/@(p.ParkCode.ToLower()+".jpg")" alt="@p.ParkDescription" />
-            <p>@p.ParkName</p>
-        </a>
-    }
-    <div> 
+        <div class="category-info">
+            <a href="~/Home/Detail/@p.ParkCode">
+                <div class="image" style="height:100px;width:600px">
+                    <img src="~/Content/parks/@(p.ParkCode.ToLower()+".jpg")" alt="@p.ParkDescription" />
+                </div>
+            </a>
+            <h1 style="color:white">@p.ParkName</h1>
+
+        </div>
+
+
         
-    </div>
+    }
+    <br />
+    <br />
+    <br />
+    <br />
 </body>
 

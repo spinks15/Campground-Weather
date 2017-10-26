@@ -14,7 +14,7 @@ body {
 
 /* Header Styles */
 header {
-    background-color: #2e5321;
+    background-color: #7da1ac;  
     padding: 10px;
 }
 
@@ -179,3 +179,4 @@ section.result {
     margin-left: auto;
     margin-right: auto;
 }
+

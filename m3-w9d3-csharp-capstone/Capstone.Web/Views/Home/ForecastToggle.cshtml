@@ -1,0 +1,87 @@
+﻿@model List<Capstone.Web.Models.Weather>
+
+@{
+    ViewBag.Title = "Forecast";
+}
+
+<h2>Forecast</h2>
+
+<p>
+    @if ((string)Session["Fahrenheit"]==null)
+    {
+        Session["Fahrenheit"] = true;
+    }
+    @if ((bool)Session["Fahrenheit"])
+            {
+        @Html.ActionLink("Convert to Celcius", "Forecast", new { id = @Html.DisplayFor(model => model[0].ParkCode), fahrenheit = false })
+    }
+    else
+    {
+        @Html.ActionLink("Convert to Fahrenheit", "Forecast", new { id = @Html.DisplayFor(model => model[0].ParkCode), fahrenheit = true })
+    }
+    
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model[0].ParkCode)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model[0].FiveDayForecastValue)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model[0].Low)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model[0].High)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model[0].Forecast)
+        </th>
+        <th>Daily Recommendations</th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.ParkCode)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FiveDayForecastValue)
+            </td>
+            <td>
+                @if ((bool)Session["Fahrenheit"])
+                {
+                    @Html.DisplayFor(modelItem => item.Low)
+                }
+                else
+                {
+                    @Html.DisplayFor(modelItem => item.LowC)
+                }
+            </td>
+            <td>
+                @if ((bool)Session["Fahrenheit"])
+                {
+                    @Html.DisplayFor(modelItem => item.High)
+                }
+                @if (!(bool)Session["Fahrenheit"])
+                {
+                    @Html.DisplayFor(modelItem => item.HighC)
+                }
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Forecast)
+            </td>
+            <td>
+                 
+                </td>
+        </tr>
+    }
+
+</table>
+
+
+@*@Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+@Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+@Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })*@

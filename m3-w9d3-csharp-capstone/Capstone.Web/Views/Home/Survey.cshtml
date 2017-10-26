@@ -1,7 +1,32 @@
-﻿
+﻿@using Capstone.Web.Models
+@model Survey
+
 @{
-    ViewBag.Title = "Survey";
+    ViewBag.Title = "Daily Survey";
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Survey</h2>
+<h2>Today's Survey:  What is your favorite National Park?</h2>
 
+@using (Html.BeginForm("Survey", "Home", FormMethod.Post))
+{
+    <div class="formInputGroup">
+        @Html.Label("State", "Favorite Park:")
+        @Html.DropDownListFor(m => m.ParkCode, Survey.ParkList)
+    </div>
+    <div class="formInputGroup">
+        @Html.Label("emailAddress", "Email:")
+        @Html.TextBoxFor(m => m.EmailAddress)
+    </div>
+    <div class="formInputGroup">
+        @Html.Label("State", "State")
+        @Html.DropDownListFor(m => m.State, Survey.States)
+    </div>
+    <div class="formInputGroup">
+        @Html.Label("CustomerExperienceLevel", "Satisfaction Score")
+        @Html.DropDownListFor(m => m.ActivityLevel, Survey.ActivityLevels)
+    </div>
+    
+
+    <button class="formSubmitButton">SUBMIT!</button>
+}

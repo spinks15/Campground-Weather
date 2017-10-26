@@ -11,5 +11,8 @@ namespace Capstone.Web.Dal
     {
         List<Park> GetAllParks();
         Park GetSpecificPark(string ParkCode);
+        List<Weather> Get5dayWeatherForSpecificPark(string ParkCode);
+        bool SaveSurvey(Survey survey);
+        List<Park> SurveyResults();
     }
 }
