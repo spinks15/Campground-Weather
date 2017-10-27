@@ -11,7 +11,7 @@
 @using (Html.BeginForm("Survey", "Home", FormMethod.Post))
 {
     <div class="formInputGroup">
-        @Html.Label("State", "Favorite Park:")
+        @Html.Label("ParkName", "Favorite Park:")
         @Html.DropDownListFor(m => m.ParkCode, Survey.ParkList)
     </div>
     <div class="formInputGroup">
@@ -23,7 +23,7 @@
         @Html.DropDownListFor(m => m.State, Survey.States)
     </div>
     <div class="formInputGroup">
-        @Html.Label("CustomerExperienceLevel", "Satisfaction Score")
+        @Html.Label("CustomerExperienceLevel", "Activity Level")
         @Html.DropDownListFor(m => m.ActivityLevel, Survey.ActivityLevels)
     </div>
     

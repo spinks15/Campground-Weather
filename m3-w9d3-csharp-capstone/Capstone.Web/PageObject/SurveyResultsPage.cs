@@ -16,19 +16,19 @@ namespace Capstone.Web.PageObjects
             PageFactory.InitElements(driver, this);
         }
 
-        [FindsBy(How = How.Name, Using = "ParkName")]
+        [FindsBy(How = How.Id, Using = "parkName")]
         public IWebElement ParkName { get; set; }
 
-        //[FindsBy(How = How.Name, Using ="NumberOfVotes")]
+        //[FindsBy(How = How.Name, Using = "NumberOfVotes:")]
         //public IWebElement NumberOfVotes { get; set; }
 
-        //[FindsBy(How = How.Name, Using = "Email")]
+        //[FindsBy(How = How.Name, Using = "Email:")]
         //public IWebElement Email { get; set; }
 
-        //[FindsBy(How = How.Name, Using = "State")]
+        //[FindsBy(How = How.Name, Using = "State:")]
         //public IWebElement State { get; set; }
 
-        //[FindsBy(How = How.Name, Using ="SatisfactionScore")]
+        //[FindsBy(How = How.Name, Using = "SatisfactionScore")]
         //public IWebElement SatisfactionScore { get; set; }
 
     }

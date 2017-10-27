@@ -8,36 +8,39 @@
 
 <p>
     @Html.ActionLink("Create New", "Create")
-</p>
-<table class="table">
+</p><table class="table">
     <tr>
-        
+
         <th>
-            @Html.DisplayNameFor(model => model.ParkName)
+            @*@Html.DisplayNameFor(model => model.ParkName)*@
+            <h2>Park Name</h2>
         </th>
-        
+
         <th>
-            @Html.DisplayNameFor(model => model.NumberOfVotes)
+            @*@Html.DisplayNameFor(model => model.NumberOfVotes)*@
+            <h2>Number of Votes</h2>
         </th>
         <th></th>
     </tr>
 
-@foreach (var item in Model) {
-    <tr>
-       
-        <td>
-            @Html.DisplayFor(modelItem => item.ParkName)
-        </td>
-        
-        <td>
-            @Html.DisplayFor(modelItem => item.NumberOfVotes)
-        </td>
-        @*<td>
-            @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
-            @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
-            @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
-        </td>*@
-    </tr>
-}
+
+    @foreach (var item in Model)
+    {
+        <tr>
+
+            <td id="parkName">
+                @Html.DisplayFor(modelItem => item.ParkName)
+            </td>
+
+            <td id="numberOfVotes">
+                @Html.DisplayFor(modelItem => item.NumberOfVotes)
+            </td>
+            @*<td>
+                    @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+                    @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+                    @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+                </td>*@
+        </tr>
+    }
 
 </table>

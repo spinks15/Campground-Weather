@@ -36,12 +36,13 @@ namespace Capstone.Web.Tests.SeleniumTests
             SurveyPage entryPage = new SurveyPage(driver);
             entryPage.Navigate();
 
-            SurveyResultPage resultPage = entryPage.FillOutForm("Cuyahoga Valley National Park", "bobRoss@gmail.com", "Ohio", "Extremly Active");
+            SurveyResultPage resultPage = entryPage.FillOutForm("Cuyahoga Valley National Park", "bobRoss@gmail.com", "Ohio", "Extremely Active");
 
-            Assert.AreEqual("Park Name", resultPage.ParkName.Text);
+            Assert.AreEqual("Cuyahoga Valley National Park", resultPage.ParkName.Text);
+            //Assert.AreEqual("6", resultPage.NumberOfVotes.Text);
             //Assert.AreEqual("bobRoss@gmail.com", resultPage.Email.Text);
             //Assert.AreEqual("Ohio", resultPage.State.Text);
-            //Assert.AreEqual("Extremly Active", resultPage.SatisfactionScore.Text);
+            //Assert.AreEqual("ExtremlyActive", resultPage.SatisfactionScore.Text);
         }
         //[TestMethod]
         //public void Salenium_SubmitSurvey2()

@@ -139,12 +139,12 @@
     <Content Include="Content\weather\thunderstorms.png" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
-    <Content Include="Scripts\bootstrap.js" />
-    <Content Include="Scripts\bootstrap.min.js" />
-    <None Include="Scripts\jquery-1.10.2.intellisense.js" />
-    <Content Include="Scripts\jquery-1.10.2.js" />
-    <Content Include="Scripts\jquery-1.10.2.min.js" />
-    <Content Include="Scripts\modernizr-2.6.2.js" />
+    <Content Include="PageObject\Scripts\bootstrap.js" />
+    <Content Include="PageObject\Scripts\bootstrap.min.js" />
+    <None Include="PageObject\Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="PageObject\Scripts\jquery-1.10.2.js" />
+    <Content Include="PageObject\Scripts\jquery-1.10.2.min.js" />
+    <Content Include="PageObject\Scripts\modernizr-2.6.2.js" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -176,7 +176,7 @@
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
-    <Content Include="Scripts\jquery-1.10.2.min.map" />
+    <Content Include="PageObject\Scripts\jquery-1.10.2.min.map" />
     <Content Include="Views\Home\Forecast.cshtml" />
     <Content Include="Views\Home\SurveyResults.cshtml" />
     <Content Include="Views\Home\ForecastToggle.cshtml" />

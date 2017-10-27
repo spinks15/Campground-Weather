@@ -20,34 +20,38 @@ namespace Capstone.Web.PageObjects
         }
 
 
-        [FindsBy(How = How.Name, Using = "FavoritePark")]
-        public IWebElement FavoritePark { get; set; }
+        [FindsBy(How = How.Name, Using = "ParkCode")]
+        public IWebElement ParkName { get; set; }
 
-        [FindsBy(How = How.Name, Using = "Email")]
+        [FindsBy(How = How.Name, Using = "EmailAddress")]
         public IWebElement Email { get; set; }
 
         [FindsBy(How = How.Name, Using = "State")]
         public IWebElement State { get; set; }
 
-        [FindsBy(How = How.Name, Using = "SatisfactionScore")]
-        public IWebElement SatisfactionScore { get; set; }
+        [FindsBy(How = How.Name, Using = "ActivityLevel")]
+        public IWebElement ActivityLevel { get; set; }
 
         [FindsBy(How = How.CssSelector, Using = "form button")]
         public IWebElement SubmitButton { get; set; }
 
-        public SurveyResultPage FillOutForm(string favortiePark, string email, string state, string satisfactionScore)
+        public SurveyResultPage FillOutForm(string parkName, string email, string state, string activityLevel)
         {
-            SelectElement favoriteParkDropDown = new SelectElement(FavoritePark);
-            favoriteParkDropDown.SelectByText(favortiePark);
+        
+            SelectElement favoriteParkDropDown = new SelectElement(ParkName);
+            favoriteParkDropDown.SelectByText(parkName);
 
             Email.SendKeys(email.ToString());
 
-            string id = $"State_{(string)state}";
-            IWebElement radioButton = driver.FindElement(By.Id(id));
-            radioButton.Click();
+            //string idd = $"State_{(string)state}";
+            //IWebElement radioButton1 = driver.FindElement(By.Id(idd));
+            //radioButton1.Click
 
-            SelectElement satisfactionScoreDropDown = new SelectElement(SatisfactionScore);
-            satisfactionScoreDropDown.SelectByText(satisfactionScore);
+            SelectElement stateDropDown = new SelectElement(State);
+            stateDropDown.SelectByText(state);
+
+            SelectElement activityLevelDropDown = new SelectElement(ActivityLevel);
+            activityLevelDropDown.SelectByText(activityLevel);
 
 
             SubmitButton.Click();
