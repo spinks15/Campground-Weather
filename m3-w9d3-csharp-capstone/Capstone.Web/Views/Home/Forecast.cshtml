@@ -18,21 +18,21 @@
     }
     
 </p>
-<table class="table">
+<table class="table" style="text-align: center">
     <tr>
-        <th>
+        <th style="padding-right: 10px">
             @Html.DisplayNameFor(model => model[0].ParkCode)
         </th>
-        <th>
+        <th style="padding-right: 10px">
             @Html.DisplayNameFor(model => model[0].FiveDayForecastValue)
         </th>
-        <th>
+        <th style="padding-right: 10px">
             @Html.DisplayNameFor(model => model[0].Low)
         </th>
-        <th>
+        <th style="padding-right: 10px">
             @Html.DisplayNameFor(model => model[0].High)
         </th>
-        <th>
+        <th style="padding-right: 10px">
             @Html.DisplayNameFor(model => model[0].Forecast)
         </th>
        <th></th>
@@ -41,13 +41,13 @@
     @foreach (var item in Model)
     {
         <tr>
-            <td>
+            <td style="padding-right: 10px">
                 @Html.DisplayFor(modelItem => item.ParkCode)
             </td>
-            <td>
+            <td style="padding-right: 10px">
                 @Html.DisplayFor(modelItem => item.FiveDayForecastValue)
             </td>
-            <td>
+            <td style="padding-right: 10px">
                 @if ((bool)Session["Fahrenheit"])
                 {
                     @Html.DisplayFor(modelItem => item.Low)
